@@ -1,0 +1,159 @@
+1. Problem
+Create a simple Rock Paper Scissors game where two players face each other. On the count of three, they both make a sign, at the exact same time, with one hand. The sign is either a rock (closed fist), paper (open palm), or scissors (two fingers, open like the victory sign).
+
+Each sign can beat one (and only one) other:
+- Rock smashes scissors
+- Scissors cut paper
+- Paper covers rock
+- If both players choose the same sign, the game is a draw
+
+the user has to click on of the buttons that represent one of the options (Rock, Paper, Scissors). Once user clicks the button, a computer randomly choosees one of these options too. The winner needs to have 3 points to win.
+
+A user should have an option to press "Start" button to start the game
+A user should have an option to press "Play Again" button to reset the game once he wins
+A user should be able to see scores 
+
+
+PSEUDO CODE:
+
+playerScore = 0;
+computerScore = 0;
+map with keys and values (1,2,3 and rock, paper, scissors)
+
+
+
+When a user presses start button
+	Hide "Rock Paper Scissors" and Start Button
+	Show elements with Computer, Score (take score from computerScore variable), text "Rock Paper Scissors?"
+	div with emojis that user can press to choose options from
+	Show elements (take score from playerScore variable) Score and You (player)
+
+When a user presses emoji
+	run FUNTION rockPaperScissors
+	take users input number from dataset HTML attribute.
+	iterate through map and find out what input that is and assign it to variable userSelection
+	
+	generate random number between 1 and 3
+	1 = rock
+	2 = paper
+	3 = scissors
+	iterate through map and find out what input that is and assing it to variable computerSelection
+	
+	IF user chooses rock and computer chooses scissors
+		add score to playerScore variable
+		push that score to HTML
+		change background colour to green
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+			
+	ELSE IF user chooses scissors and computers chooses rock
+		add score to computerScore variable
+		push that score to HTML
+		change background color to red
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+	ELSE IF	user chooses scissors and computer chooses paper
+		add score to playerScore variable
+		push that score to HTML
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+	ELSE IF	user chooses paper and computer chooses scissors
+		add score to computerScore variable
+		push that score to HTML
+		change background color to red
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+	ELSE IF user chooses paper and computer chooses rock
+		add score to playerScore variable
+		push that score to HTML
+		change background color to green
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+	ELSE IF user chooses paper and computer chooses rock
+		add score to computerScore variable
+		push that score to HTML
+		change background color to red
+		hide robot emoji
+		show chomputers option emoji
+		IF playerScore is 3
+			change text from "Rock Paper Scissors" to "You have won!"
+			show "Start Again" Button
+		ELSE IF computerScore is 3
+			change text from "Rock Paper Scissors" to "You have lost!"
+			show "Start Again" Button
+		ELSE
+			change text from "Rock Paper Scissors" to "Point for you!"
+			show next round button 
+	ELSE
+		change background to yellow
+		change text from "Rock Paper Scissors" to "Draw!"
+		hide robot emoji
+		show computers option emoji
+		show next round button
+
+When a user presses "Next Round Button"
+	run FUNTION nextRound
+	show Score
+	Show elements with Computer, Score (updated score), text "Rock Paper Scissors?"
+	div with emojis that user can press to choose options from
+	Show elements Score and You (player) (updated score)
+
+When a user presses "Start Again"
+	run FUNTION startAgain
+	playerScore = 0
+	computerScore = 0
+	push both to HTML
+	Show elements with Computer, Score (updated score), text "Rock Paper Scissors?"
+	div with emojis that user can press to choose options from
+	Show elements Score and You (player) (updated score)
+		
+		
+		To Do:
+		1. Create function for start again
+		- change text in the midddle to "Rock Paper Scissors"
+		2. make logic so player cannot play when either computer or player wins

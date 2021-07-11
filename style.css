@@ -1,0 +1,117 @@
+:root {
+  --grey-background: #8e8e8e;
+  --green-background: #a6caa6;
+  --red-background: #d66969;
+}
+
+body {
+  margin: 0;
+  background: var(--grey-background);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.4em 1.7em;
+  border-radius: 100px;
+  border: none;
+  box-shadow: 1px 3px 5px 1px rgba(59, 43, 43, 0.25);
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+/*=============
+Typography
+==============*/
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+/*=============
+Layout
+==============*/
+
+/* INTRO */
+
+.btn--primary {
+  font-size: 1.4rem;
+  background-color: var(--green-background);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.btn--primary:focus,
+.btn--primary:hover {
+  opacity: 1;
+}
+
+/* GAME */
+
+.stats {
+  margin: 1em 0;
+}
+
+.stats--player {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.emoji {
+  font-size: 3rem;
+}
+
+.computer--emoji {
+  margin-bottom: 1em;
+}
+
+.emojis {
+  margin: 3em auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.player--emoji {
+  cursor: pointer;
+}
+
+.btn--secondary {
+  position: relative;
+  top: 60px;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.btn--secondary:focus,
+.btn--secondary:hover {
+  opacity: 1;
+}

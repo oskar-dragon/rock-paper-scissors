@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro show">
+        <h1 class="game-name">Rock Paper Scissors</h1>
+        <button class="btn btn--primary">Start</button>
+      </div>
+
+      <div class="game hide">
+        <div class="stats stats--computer">
+          <h2 class="stats__name">Computer</h2>
+          <p class="stats__score">Score: <span id="score-computer">0</span></p>
+        </div>
+        <div class="emoji computer--emoji">🤖</div>
+        <h3 class="text">Rock Paper Scissors?</h3>
+        <div class="emojis">
+          <div class="emoji player--emoji" id="rock">✊</div>
+          <div class="emoji player--emoji" id="paper">✋</div>
+          <div class="emoji player--emoji" id="scissors">✌</div>
+        </div>
+        <div class="stats stats--player">
+          <h2 class="stats__name">You</h2>
+          <p class="stats__score">Score: <span id="score-player">0</span></p>
+        </div>
+        <button class="btn btn--secondary hide">Start again</button>
+      </div>
+    </div>
+    <script src="index.pack.js"></script>
+  </body>
+</html>
