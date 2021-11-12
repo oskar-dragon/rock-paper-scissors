@@ -1,4 +1,4 @@
-# Project Name
+# Rock Paper Scissors Game
 
 > A simple Rock Paper Scissors game that everyone knows!
 > Live demo [_here_](https://oskar-dragon.github.io/rock-paper-scissors/)
