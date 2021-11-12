@@ -10,6 +10,13 @@ const textElement = document.querySelector(".text");
 
 let playerScore = 0;
 let computerScore = 0;
+
+const bgcolor = {
+  green: "#a6caa6",
+  red: "#d66969",
+  yellow: "#DECD92",
+  grey: "#8e8e8e",
+};
 const rpsOptions = [
   {
     name: "rock",
@@ -40,7 +47,6 @@ startBtn.addEventListener("click", () => {
 rockBtn.addEventListener("click", rockPaperScissors);
 paperBtn.addEventListener("click", rockPaperScissors);
 scissorsBtn.addEventListener("click", rockPaperScissors);
-
 startAgainBtn.addEventListener("click", startAgain);
 
 function rockPaperScissors(e) {
@@ -70,67 +76,62 @@ function rockPaperScissors(e) {
 function playerWin() {
   playerScore++;
   playerScoreElement.innerHTML = `${playerScore}`;
-  document.body.style.backgroundColor = "#a6caa6";
-  startAgainBtn.style.backgroundColor = "#a6caa6";
+  document.body.style.backgroundColor = bgcolor.green;
+  startAgainBtn.style.backgroundColor = bgcolor.green;
 
   if (playerScore === 3) {
     textElement.innerHTML = "You have won!";
-    rockBtn.style.pointerEvents = "none";
-    paperBtn.style.pointerEvents = "none";
-    scissorsBtn.style.pointerEvents = "none";
-    startAgainBtn.classList.remove("hide");
-  } else if (computerScore === 3) {
-    textElement.innerHTML = "You have lost!";
-    rockBtn.style.pointerEvents = "none";
-    paperBtn.style.pointerEvents = "none";
-    scissorsBtn.style.pointerEvents = "none";
+    disablePointerEvents();
     startAgainBtn.classList.remove("hide");
   } else {
     textElement.innerHTML = "Point for you!";
-    startAgainBtn.classList.add("hide");
   }
 }
 
 function computerWin() {
   computerScore++;
   computerScoreElement.innerHTML = `${computerScore}`;
-  document.body.style.backgroundColor = "#d66969";
-  startAgainBtn.style.backgroundColor = "#d66969";
+  document.body.style.backgroundColor = bgcolor.red;
+  startAgainBtn.style.backgroundColor = bgcolor.red;
 
-  if (playerScore === 3) {
-    textElement.innerHTML = "You have won!";
-    rockBtn.style.pointerEvents = "none";
-    paperBtn.style.pointerEvents = "none";
-    scissorsBtn.style.pointerEvents = "none";
-    startAgainBtn.classList.remove("hide");
-  } else if (computerScore === 3) {
-    textElement.innerHTML = "You have lost!";
-    rockBtn.style.pointerEvents = "none";
-    paperBtn.style.pointerEvents = "none";
-    scissorsBtn.style.pointerEvents = "none";
+  if (computerScore === 3) {
+    textElement.innerHTML = "Computer has won!";
+    disablePointerEvents();
     startAgainBtn.classList.remove("hide");
   } else {
-    textElement.innerHTML = "Point for compter!";
-    startAgainBtn.classList.add("hide");
+    textElement.innerHTML = "Point for computer!";
   }
 }
 
 function draw() {
   textElement.innerHTML = "Draw!";
-  document.body.style.backgroundColor = "#DECD92";
+  document.body.style.backgroundColor = bgcolor.yellow;
   startAgainBtn.classList.add("hide");
 }
 
 function startAgain() {
-  computerEmoji.innerHTML = rpsOptions[3].emoji;
-  document.body.style.backgroundColor = "#8e8e8e";
-  playerScore = 0;
+  document.body.style.backgroundColor = bgcolor.grey;
+  resetScore();
   playerScoreElement.innerHTML = `${playerScore}`;
-  computerScore = 0;
   computerScoreElement.innerHTML = `${computerScore}`;
   textElement.innerHTML = "Rock Paper Scissors?";
   startAgainBtn.classList.add("hide");
+  enablePointerEvents();
+}
+
+function disablePointerEvents() {
+  rockBtn.style.pointerEvents = "none";
+  paperBtn.style.pointerEvents = "none";
+  scissorsBtn.style.pointerEvents = "none";
+}
+
+function enablePointerEvents() {
   rockBtn.style.pointerEvents = "auto";
   paperBtn.style.pointerEvents = "auto";
   scissorsBtn.style.pointerEvents = "auto";
+}
+
+function resetScore() {
+  playerScore = 0;
+  computerScore = 0;
 }
